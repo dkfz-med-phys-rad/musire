@@ -1,4 +1,4 @@
-BINARIES = create-pc-ply-from-tumor-mhd add-tumor-mhd-into-phantom-mhd create-density-mhd-from-phantom-mhd create-downsampled-tumor-mhd add-ushort-raw-into-second add-float-raw-into-second create-activity-dat-for-total-activity-in-phantom-mhd tilt-mhd
+BINARIES = create-pc-ply-from-tumor-mhd add-tumor-mhd-into-phantom-mhd create-density-mhd-from-phantom-mhd create-downsampled-tumor-mhd add-ushort-raw-into-second add-float-raw-into-second create-activity-dat-for-total-activity-in-phantom-mhd tilt-mhd mirror-mhd
 SOURCES = $(wildcard *.cpp *.h)
 
 CC      = g++
