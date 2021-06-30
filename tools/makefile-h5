@@ -1,0 +1,28 @@
+BINARIES = convert-spinscenario-h5-results-to-mhd convert-mhd-phantom-to-spinscenario-h5
+SOURCES = $(wildcard *.cpp *.h)
+
+CC       = h5c++
+CFLAGS   = -O3 -std=gnu++17
+CPPFLAGS = $(CFLAGS)
+LD       = $(CC)
+LDFLAGS  = -lsz -lz -lm
+
+BACKUP_FILE := ~/backups/musire-tools-h5-$(shell date '+%Y-%m-%d-%H-%M-%S').tgz
+
+.PHONY: clean backup all edit
+
+all: $(BINARIES)
+
+$(BINARIES): %: %.cpp
+	$(CC) $(CFLAGS) -o $@ $(LDFLAGS) $<
+
+clean:
+	@(rm -rf $(BINARIES) convert-spinscenario-h5-results-to-mhd.o convert-mhd-phantom-to-spinscenario-h5.o)
+
+backup:
+	@(/usr/bin/tar czf $(BACKUP_DIR)$(BACKUP_FILE) $(SOURCES) makefile)
+	@(echo $(BACKUP_DIR)$(BACKUP_FILE))
+	@(tar --list -f $(BACKUP_DIR)$(BACKUP_FILE))
+
+edit:
+	nvim -p $(SOURCES) makefile
