@@ -38,9 +38,9 @@ Please cite the following publication:
         issue = "Synergistic tomographic image reconstruction: part 2"
         volume = "379",
         year = "2021",
-        issn = "",
-        doi = "https://doi.org/",
-        url = "http://www.sciencedirect.com/science/article/",
+        issn = "t.b.a.",
+        doi = "https://doi.org/t.b.a.",
+        url = "http://www.sciencedirect.com/science/article/t.b.a.",
         }
 
 
