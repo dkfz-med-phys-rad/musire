@@ -18,7 +18,7 @@ Currently incorporated image reconstruction programs include <a href="https://ww
 MetaImage (mhd) standard is used for voxelized phantom and image data format.
 Meshlab project (mlp) containers incorporating polygon meshes and point clouds defined by the Stanford triangle format (ply) are employed to represent anatomical structures for optical simulation, and to represent tumour cell inserts.
 
-A number of auxiliary programs have been developed for data transformation and adaptive parameter assignment.
+A number of auxiliary programs inside the <a href="./tools/">tools</a> sub-directory have been developed for data transformation and adaptive parameter assignment.
 
 The software workflow utilizes fully automatic distribution to, and consolidation from, any number of Linux workstations and CPU cores.
 
