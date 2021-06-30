@@ -26,7 +26,6 @@ The software workflow utilizes fully automatic distribution to, and consolidatio
 
 ## How to cite this code
 Please cite the following publication:
-
         @article{PETER2021,
         author = "J Peter"
         title = "Musiré: multimodal simulation and reconstruction framework for the radiological imaging sciences",
