@@ -138,37 +138,4 @@ export MRI_T1_WEIGHTED="MRITRms=500  MRITEms=15"
 export MRI_T2_WEIGHTED="MRITRms=5000 MRITEms=100"
 export MRI_PD_WEIGHTED="MRITRms=5000 MRITEms=15"
 
-# BLI system
-
-# In TumorCellsMhdFile, ElementSize and ElementSpacing will be overwritten by TumorCellDiametermm. So, they should be 
-# preassigned by the tumor growth program with e.g. 1.0 1.0 1.0
-
-# TumorShiftXmm=11.2 TumorShiftYmm=-3.5 TumorShiftZmm=-32.0
-export DIGIMOUSE_7372="PhantomAtlasMlpFile=$HOME/musire/phantoms/digimouse-mesh-skin-7372faces.mlp"
-export TUMOR_NECROTIC="TumorCellsMhdFile=$HOME/musire/phantoms/tg-image-at-day-0200-with-0003064960-cells-0025.mhd \
-                       TumorCellDiametermm=0.01 \
-                       TumorShiftXmm=0.0 \
-                       TumorShiftYmm=0.0 \
-                       TumorShiftZmm=20.0"
-
-# Phantoms
-
-export MIDA_BRAIN_ATLAS="PhantomAtlasMhdFile=$HOME/musire/phantoms/mida-head-atlas-05mm-z225.mhd \
-                         PhantomMaterialsDatFile=$HOME/musire/phantoms/mida-head-atlas-gate-materials.dat"
-
-# Tumors
-
-export TUMOR_A="TumorCellsMhdFile=$HOME/musire/phantoms/tg-image-at-day-0400-with-0000004850-cells.mhd \
-                TumorShiftXmm=25.0 \
-                TumorShiftYmm=35.0"
-
-export MIDA_BRAIN_F18_FDG="PETisotope=F18 \
-                           PhantomActivitiesDatFile=$HOME/musire/phantoms/mida-head-gate-activities-f18-fdg.dat \
-                           PhantomTotalActivityMBq=5 \
-                           PETtimeStopSec=60"
-
-export MIDA_BRAIN_Tc99m_TC="SPECTisotope=Tc99m \
-                            PhantomActivitiesDatFile=$HOME/musire/phantoms/mida-head-gate-activities-Tc99m-tc.dat \
-                            PhantomTotalActivityMBq=5 \
-                            SPECTtimePerProjectionSec=120"
 
