@@ -4,6 +4,10 @@ Copyright © German Cancer Research Center (DKFZ), <a href="https://www.dkfz.de/
 
 Please make sure that your usage of this code is in compliance with the code <a href="./LICENSE">license</a>.
 
+## Author
+
+Musiré has been developed and written by Jörg Peter (j.peter@dkfz.de)
+
 ## Overview
 
 Musiré is proposed for managing the execution of simulation and image reconstruction for SPECT, PET, CBCT, MRI, BLI, and FMI packages in single and multimodal biomedical imaging applications.
