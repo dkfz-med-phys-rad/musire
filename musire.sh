@@ -1961,36 +1961,36 @@ MRISpinScenarioSimulation() #{{{
       if [[ $sliceZ -eq 0 ]]; then
         cp "$output_dir___"/*.{mhd,raw} .
       else
-        cat "$output_dir___"/raw-IMG-im.raw   >> raw-IMG-im.raw
         cat "$output_dir___"/raw-IMG-abs.raw  >> raw-IMG-abs.raw
         cat "$output_dir___"/raw-IMG-re.raw   >> raw-IMG-re.raw
-        cat "$output_dir___"/raw-FID-im.raw   >> raw-FID-im.raw
+        cat "$output_dir___"/raw-IMG-im.raw   >> raw-IMG-im.raw
         cat "$output_dir___"/raw-FID-abs.raw  >> raw-FID-abs.raw
         cat "$output_dir___"/raw-FID-re.raw   >> raw-FID-re.raw
-        cat "$output_dir___"/raw-SPEC-im.raw  >> raw-SPEC-im.raw
+        cat "$output_dir___"/raw-FID-im.raw   >> raw-FID-im.raw
         cat "$output_dir___"/raw-SPEC-abs.raw >> raw-SPEC-abs.raw
         cat "$output_dir___"/raw-SPEC-re.raw  >> raw-SPEC-re.raw
+        cat "$output_dir___"/raw-SPEC-im.raw  >> raw-SPEC-im.raw
       fi
       rm -rf "$luaFile___" "$output_dir___" # clean up
     done
-    gawk -i inplace -v var="$sliceZ" '$1~/^DimSize/{$5=var}1' raw-IMG-im.mhd
     gawk -i inplace -v var="$sliceZ" '$1~/^DimSize/{$5=var}1' raw-IMG-abs.mhd
     gawk -i inplace -v var="$sliceZ" '$1~/^DimSize/{$5=var}1' raw-IMG-re.mhd
-    gawk -i inplace -v var="$sliceZ" '$1~/^DimSize/{$5=var}1' raw-FID-im.mhd
+    gawk -i inplace -v var="$sliceZ" '$1~/^DimSize/{$5=var}1' raw-IMG-im.mhd
     gawk -i inplace -v var="$sliceZ" '$1~/^DimSize/{$5=var}1' raw-FID-abs.mhd
     gawk -i inplace -v var="$sliceZ" '$1~/^DimSize/{$5=var}1' raw-FID-re.mhd
-    gawk -i inplace -v var="$sliceZ" '$1~/^DimSize/{$5=var}1' raw-SPEC-im.mhd
+    gawk -i inplace -v var="$sliceZ" '$1~/^DimSize/{$5=var}1' raw-FID-im.mhd
     gawk -i inplace -v var="$sliceZ" '$1~/^DimSize/{$5=var}1' raw-SPEC-abs.mhd
     gawk -i inplace -v var="$sliceZ" '$1~/^DimSize/{$5=var}1' raw-SPEC-re.mhd
-    tilt-mhd-image raw-IMG-im.mhd   ++z
-    tilt-mhd-image raw-IMG-abs.mhd  ++z
-    tilt-mhd-image raw-IMG-re.mhd   ++z
-    tilt-mhd-image raw-FID-im.mhd   ++z
-    tilt-mhd-image raw-FID-abs.mhd  ++z
-    tilt-mhd-image raw-FID-re.mhd   ++z
-    tilt-mhd-image raw-SPEC-im.mhd  ++z
-    tilt-mhd-image raw-SPEC-abs.mhd ++z
-    tilt-mhd-image raw-SPEC-re.mhd  ++z
+    gawk -i inplace -v var="$sliceZ" '$1~/^DimSize/{$5=var}1' raw-SPEC-im.mhd
+    tilt-mhd raw-IMG-abs.mhd  ++z; mirror-mhd raw-IMG-abs+zz-tilted.mhd  -x
+    tilt-mhd raw-IMG-re.mhd   ++z; mirror-mhd raw-IMG-re+zz-tilted.mhd   -x
+    tilt-mhd raw-IMG-im.mhd   ++z; mirror-mhd raw-IMG-im+zz-tilted.mhd   -x
+    tilt-mhd raw-FID-abs.mhd  ++z; mirror-mhd raw-FID-abs+zz-tilted.mhd  -x
+    tilt-mhd raw-FID-re.mhd   ++z; mirror-mhd raw-FID-re+zz-tilted.mhd   -x
+    tilt-mhd raw-FID-im.mhd   ++z; mirror-mhd raw-FID-im+zz-tilted.mhd   -x
+    tilt-mhd raw-SPEC-abs.mhd ++z; mirror-mhd raw-SPEC-abs+zz-tilted.mhd -x
+    tilt-mhd raw-SPEC-re.mhd  ++z; mirror-mhd raw-SPEC-re+zz-tilted.mhd  -x
+    tilt-mhd raw-SPEC-im.mhd  ++z; mirror-mhd raw-SPEC-im+zz-tilted.mhd  -x
   fi
   local endTime=$(date)
   local time=$(( $(date -d "$endTime" "+%s") - $(date -d "$startTime" "+%s") ))
