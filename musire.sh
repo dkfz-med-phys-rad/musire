@@ -7,44 +7,6 @@
 # | Version: 2021-03-26                                                                                     |
 # +---------------------------------------------------------------------------------------------------------+
 
-# C a l l i n g  e x a m p l e s:
-#
-# Predifined argument lists for scanners, phantoms, reconstruction parameters etc. can be defined elsewhere
-# (musire-aliases.sh)
-# source $HOME/musire/musire-aliases.sh
-#
-# musire.sh $HUMAN_BRAIN_PET -v
-# musire.sh $HUMAN_BRAIN_PET $MIDA_BRAIN_ATLAS -v
-# musire.sh $HUMAN_BRAIN_PET $MIDA_BRAIN_ATLAS $TUMOR_A -v
-# musire.sh $HUMAN_BRAIN_PET $MIDA_BRAIN_ATLAS $TUMOR_A $MIDA_BRAIN_F18_FDG PETtimeStopSec=20
-# musire.sh Modality=PET GateUserMacFile=$HOME/cate-contrib/imaging/PET/PET_CylindricalPET_System.mac CpuCores=1 # user defined macro
-# musire.sh $HUMAN_BRAIN_SPECT $TRIONIX_LEHR_PB_COLLIMATOR $MIDA_BRAIN_ATLAS $TUMOR_A $MIDA_BRAIN_Tc99m_TC SPECTtimePerProjectionSec=10
-# musire.sh Modality=SPECT GateUserMacFile=$HOME/cate-contrib/imaging/SPECT/SPECT.mac # user defined macro
-# musire.sh Modality=BLI $DIGIMOUSE_7372 $TUMOR_NECROTIC BLIphotonsPerTumorCell=0.1
-# musire.sh Modality=FMI $DIGIMOUSE_7372 $TUMOR_NECROTIC FMIfluorophoreType=Cy55 FMIexcitationWavelengthCenternm=600 FMIexcitationPhotonsPerPosition=10000 FMIexcitationAxialStartPositionZ=20.0
-# musire.sh $HUMAN_BRAIN_CBCT $MIDA_BRAIN_ATLAS CBCTphotonsPerProjectionBq=100000
-
-# R e m o t e  h o s t s:
-# Prepare additional remote-host(s) in order to perform ssh login without password using ssh-keygen and
-# ssh-copy-id
-# 1. On local-host, create public and private keys and copy the public key to remote-host
-# $ ssh-keygen
-# $ ssh-copy-id -i ~/.ssh/id_rsa.pub <user>@<server>
-# 2. Log into remote-host and adjust sshd settings
-# ssh <user>@<server>
-# @<server> $ sudo vim /etc/ssh/sshd_config # check that: PubkeyAuthentication yes
-#                                                         PasswordAuthentication no
-# @<server> $ sudo systemctl restart sshd
-# @<server> $ exit
-# 3. Set up ssh agent to store the keys to avoid having to re-enter passphrase at every login
-# $ ssh-agent $SHELL
-# $ ssh-add
-# 4. Tree structure
-# On the remote-host(s), the following directory tree should exist:
-# ~/musire
-# ~/misire/output
-# ~/musire/gate/tools/startup_c.so
-
 # misc settings and functions #{{{
 set -euTEo pipefail # stricter Bash; prints EchoAbort() information if things go wrong
 exec 2>&1           # redirect standard error to standard out (and into a log file)
@@ -2244,7 +2206,7 @@ CBCTRtkImageReconstruction() #{{{
 
 AskDisclaimerAndCopyright() #{{{
   {
-  EchoGn "Multimodal Simulation & Reconstruction Framework for Biomedical Imaging (Musire¨)\n"
+  EchoGn "Multimodal Simulation & Reconstruction Framework for Biomedical Imaging (MusireÂ¨)\n"
   EchoBl "  Author & Developer:\n"
   echo "    Joerg Peter, German Cancer Research Center <j.peter@dkfz-heidelberg.de>"
   EchoBl "  Disclaimer & Copyright:\n"
