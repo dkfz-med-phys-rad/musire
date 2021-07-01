@@ -2,6 +2,12 @@
 
 Copyright © German Cancer Research Center (DKFZ), <a href="https://www.dkfz.de/en/medphysrad/index.php">Division of Medical Physics in Radiology</a>.<br>
 
+## Author
+
+<a href="./musire.sh">Musire.sh</a> along with its <a href="./tools">helper programs</a> has been developed and written by J. Peter (j.peter@dkfz.de).
+
+## Disclaimer and copyright
+
 Please make sure that your usage of this code is in compliance with the code <a href="./LICENSE">license</a>.
 
 ## Overview
