@@ -1944,15 +1944,24 @@ MRISpinScenarioSimulation() #{{{
     gawk -i inplace -v var="$sliceZ" '$1~/^DimSize/{$5=var}1' raw-SPEC-abs.mhd
     gawk -i inplace -v var="$sliceZ" '$1~/^DimSize/{$5=var}1' raw-SPEC-re.mhd
     gawk -i inplace -v var="$sliceZ" '$1~/^DimSize/{$5=var}1' raw-SPEC-im.mhd
-    tilt-mhd raw-IMG-abs.mhd  ++z; mirror-mhd raw-IMG-abs+zz-tilted.mhd  -x
-    tilt-mhd raw-IMG-re.mhd   ++z; mirror-mhd raw-IMG-re+zz-tilted.mhd   -x
-    tilt-mhd raw-IMG-im.mhd   ++z; mirror-mhd raw-IMG-im+zz-tilted.mhd   -x
-    tilt-mhd raw-FID-abs.mhd  ++z; mirror-mhd raw-FID-abs+zz-tilted.mhd  -x
-    tilt-mhd raw-FID-re.mhd   ++z; mirror-mhd raw-FID-re+zz-tilted.mhd   -x
-    tilt-mhd raw-FID-im.mhd   ++z; mirror-mhd raw-FID-im+zz-tilted.mhd   -x
-    tilt-mhd raw-SPEC-abs.mhd ++z; mirror-mhd raw-SPEC-abs+zz-tilted.mhd -x
-    tilt-mhd raw-SPEC-re.mhd  ++z; mirror-mhd raw-SPEC-re+zz-tilted.mhd  -x
-    tilt-mhd raw-SPEC-im.mhd  ++z; mirror-mhd raw-SPEC-im+zz-tilted.mhd  -x
+    "${Script[toolsDir]}"/tilt-mhd raw-IMG-abs.mhd  ++z
+    "${Script[toolsDir]}"/tilt-mhd raw-IMG-re.mhd   ++z
+    "${Script[toolsDir]}"/tilt-mhd raw-IMG-im.mhd   ++z
+    "${Script[toolsDir]}"/tilt-mhd raw-FID-abs.mhd  ++z
+    "${Script[toolsDir]}"/tilt-mhd raw-FID-re.mhd   ++z
+    "${Script[toolsDir]}"/tilt-mhd raw-FID-im.mhd   ++z
+    "${Script[toolsDir]}"/tilt-mhd raw-SPEC-abs.mhd ++z
+    "${Script[toolsDir]}"/tilt-mhd raw-SPEC-re.mhd  ++z
+    "${Script[toolsDir]}"/tilt-mhd raw-SPEC-im.mhd  ++z
+    "${Script[toolsDir]}"/mirror-mhd raw-IMG-abs+zz-tilted.mhd  -x
+    "${Script[toolsDir]}"/mirror-mhd raw-IMG-re+zz-tilted.mhd   -x
+    "${Script[toolsDir]}"/mirror-mhd raw-IMG-im+zz-tilted.mhd   -x
+    "${Script[toolsDir]}"/mirror-mhd raw-FID-abs+zz-tilted.mhd  -x
+    "${Script[toolsDir]}"/mirror-mhd raw-FID-re+zz-tilted.mhd   -x
+    "${Script[toolsDir]}"/mirror-mhd raw-FID-im+zz-tilted.mhd   -x
+    "${Script[toolsDir]}"/mirror-mhd raw-SPEC-abs+zz-tilted.mhd -x
+    "${Script[toolsDir]}"/mirror-mhd raw-SPEC-re+zz-tilted.mhd  -x
+    "${Script[toolsDir]}"/mirror-mhd raw-SPEC-im+zz-tilted.mhd  -x
   fi
   local endTime=$(date)
   local time=$(( $(date -d "$endTime" "+%s") - $(date -d "$startTime" "+%s") ))
@@ -2206,19 +2215,16 @@ CBCTRtkImageReconstruction() #{{{
 
 AskDisclaimerAndCopyright() #{{{
   {
-  EchoGn "Multimodal Simulation & Reconstruction Framework for Biomedical Imaging (MusireÂ¨)\n"
+  EchoGn "Multimodal Simulation & Reconstruction Framework for Biomedical Imaging (Musire¨)\n"
   EchoBl "  Author & Developer:\n"
   echo "    Joerg Peter, German Cancer Research Center <j.peter@dkfz-heidelberg.de>"
   EchoBl "  Disclaimer & Copyright:\n"
   echo "    The purpose of this program is only for academic research excluding any clinical study."
-  echo "    The author shall not be liable in any event of incidental or consequential damages in"
-  echo "    connection with, or arising out of, the furnishing performance, or use of this program."
-  echo "    No part of this program may becopied, reproduced, translated, or reduced to any electric"
-  echo "    medium or machine-readable form without the prior written consent of the author."
+  echo "    Usage of this code is in compliance with the Apache License 2.0 (cf. ./LICENSE)"
   EchoYe "  Do you accept this Disclaimer & Copyright? "
   read -r -p " <y/n> " -n1 answer
   [[ "$answer" != "y" ]] && { echo -e "\n\e[1;38;5;124;82m\e[47mNot accepted!\e[0m"; exit; } || echo -e "\n";
   } #}}}
 
-# ===================================================================================================================================
+# ===========================================================================================================
 main "$@"
