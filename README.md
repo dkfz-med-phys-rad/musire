@@ -1,4 +1,4 @@
-# *Musiré* ── multimodal simulation and reconstruction framework for the radiological imaging sciences
+# *Musiré* ─ multimodal simulation and reconstruction framework for the radiological imaging sciences
 
 Copyright © German Cancer Research Center (DKFZ), <a href="https://www.dkfz.de/en/medphysrad/index.php">Division of Medical Physics in Radiology</a>.<br>
 
@@ -26,15 +26,15 @@ The software workflow utilizes fully automatic distribution to, and consolidatio
 
 ## Installation
 
-The main script is *musire.sh* which is a Bash script and runs under Linux.
+The main script, *musire.sh*, is a Bash script and runs under Linux.
 
-After cloning this Github project into some directory, change into ./musire/tools and do a 
+After cloning into some directory, change into ./musire/tools and do
 ```
 make all && make -f makefile-h5 all
 ```
 This compiles all the helper programs in this directory needed by musire.sh.
 
-Make sure that Gate, Spin-scenario, Lipros, RTK and CASToR are properly installed depending on your needs.
+Make sure that <a href="http://www.opengatecollaboration.org/">Gate</a>, <a href="https://github.com/spin-scenario/spin-scenario">Spin-Scenario</a>, <a href="https://github.com/dkfz-med-phys-rad/lipros">Lipros</a>, <a href="https://www.openrtk.org/">RTK</a> and <a href="https://www.castor-project.org/">CASToR</a> are properly installed depending on your needs.
 
 <a href="https://www.aliza-dicom-viewer.com/">Aliza</a> (mhd), <a href="https://www.meshlab.net">Meshlab</a> (ply) and <a href="https://github.com/derf/feh">feh</a> (png) are called by default in musire.sh for image display. Alternative programs (such as <a href="https://mitk.org">MITK</a> or <a href="http://www.itksnap.org">itksnap</a> for mhd display) might be used (in which case search and replace these binaries in the main function of musire.sh).
 
@@ -175,12 +175,12 @@ musire.sh can be called with the following command line arguments:
 ```
 
 Since this argument list is quite long, aliases might be defined to simplify the use of musire.sh.
-Examples are provided in musire-aliases.sh.
+Examples are provided in <a href="./musire-aliases.sh">musire-aliases.sh</a>.
 
 ### Calling examples
 
 Most of the following calling examples need phantoms and source distribution / tissue parameter files.
-These should be provided by the user.
+These must be provided by the user.
 
 ```
 musire.sh $HUMAN_BRAIN_PET GateVisualisationOnly # visualisation of cylindrical PET
