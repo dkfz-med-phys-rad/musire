@@ -201,21 +201,18 @@ musire.sh $HUMAN_BRAIN_CBCT $MIDA_BRAIN_ATLAS CBCTphotonsPerProjectionBq=1000000
 
 ## How to cite this code
 Please cite the following publication:
-<a><img src="./rsta-theme-issue.jpg" width="360"></a>
-
-        @article{PETER2021,
-        author = "J Peter"
-        title = "Musiré: multimodal simulation and reconstruction framework for the radiological imaging sciences",
-        journal = "Philosophical Transactions of the Royal Society A",
-        issue = "Synergistic tomographic image reconstruction: part 2"
-        volume = "379",
-        year = "2021",
-        issn = "",
-        doi = "https://doi.org/",
-        url = "http://www.sciencedirect.com/science/article/",
-        }
-
-
-
-
+<a><img src="./rsta-theme-issue.jpg" width="500"></a>
+```
+@article{PETER2021,
+author = "J Peter"
+title = "Musiré: multimodal simulation and reconstruction framework for the radiological imaging sciences",
+journal = "Philosophical Transactions of the Royal Society A",
+issue = "Synergistic tomographic image reconstruction: part 2"
+volume = "379",
+year = "2021",
+issn = "",
+doi = "https://doi.org/",
+url = "http://www.sciencedirect.com/science/article/",
+}
+```
 
