@@ -8,7 +8,10 @@ Copyright © German Cancer Research Center (DKFZ), <a href="https://www.dkfz.de/
 
 ## Disclaimer and copyright
 
-Please make sure that your usage of this code is in compliance with the code <a href="./LICENSE">license</a>.
+Musiré is provided as an open-source project and will be continuously developed.
+Please make sure that your usage of this code is in compliance with the <a href="./LICENSE">Apache License 2.0</a>.
+The purpose of this project is only for academic research excluding any clinical study.
+To make it better, you are very welcome to contribute in many ways such as to add simulation and reconstruction parameters, to improve the existing script and to add new features to it, to provide interfaces to software that might be incorporated from Musiré, or to find and correct software mistakes.
 
 ## Overview
 
