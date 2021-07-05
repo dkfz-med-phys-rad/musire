@@ -214,9 +214,8 @@ journal = "Philosophical Transactions of the Royal Society A",
 issue = "Synergistic tomographic image reconstruction: part 2"
 volume = "379",
 year = "2021",
-issn = "",
-doi = "https://doi.org/",
-url = "http://www.sciencedirect.com/science/article/",
+doi = "http://doi.org/10.1098/rsta.2020.0190",
+url = "https://royalsocietypublishing.org/doi/10.1098/rsta.2020.0190",
 }
 ```
 
