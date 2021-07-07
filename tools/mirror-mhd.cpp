@@ -1,5 +1,4 @@
-#include "/home/jpeter/cpp/include/jp.h"
-#include "/home/jpeter/cpp/include/jp-mhd.h"
+#include "misc.h"
 
 using namespace std;
 

@@ -4,8 +4,8 @@
 #include <fstream>
 #include <filesystem>
 
-#include <rarray>
-#include <rarrayio>
+#include "rarray"
+#include "rarrayio"
 
 #include "H5Cpp.h"
 
