@@ -7,13 +7,12 @@
 #include <fstream>
 #include <filesystem>
 
-#include <rarray>
-#include <rarrayio>
+#include "rarray"
+#include "rarrayio"
 
 #include "H5Cpp.h"
 
-#include <jp-echo.hpp>
-#include <jp-mhd-3d.hpp>
+#include "misc.h"
 
 using namespace std;
 using namespace H5;
